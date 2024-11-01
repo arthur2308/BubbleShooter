@@ -1,0 +1,47 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+
+<head>
+    <meta charset="utf-8">
+    <title>Bubble Shooter</title>
+    <link href="_css/main.css" rel="stylesheet">
+    <script src="_js/require.js"></script>
+    <script>
+    require.config({
+        paths: {
+            'jquery': [
+                'http://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery',
+                '_js/jquery-3.7.1.min'
+            ],
+            'ui': '_js/ui',
+        	'game': '_js/game',
+        },
+        // Set the timeout to a reasonable time to failover if the CDN is too slow
+        waitSeconds: 3
+    });
+
+    require(['jquery', 'ui', 'game' ], function() {
+        // Library is loaded and can be used here
+        console.log('Library loaded');
+    }, function(err) {
+        console.error('Failed to load a library')
+    });
+    </script>
+</head>
+
+<body>
+    <div id="page">
+        <div id="top_bar"></div>
+        <div id="game"></div>
+        <div id="footer_bar"></div>
+        <div id="start_game" class="dialog">
+            <div id="start_game_message"></div>
+            <h2>Start a new game</h2>
+        </div>
+        <div class="but_start_game button">
+            New Game
+        </div>
+    </div>
+</body>
+
+</html>
